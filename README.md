@@ -107,7 +107,8 @@ message ApplyTacticResponse {
 }
 ```
 
-##
+## Example communicating with HOList
+
 The spec alone isn't enough to understand what is going on, so we will implement a light weight client which talks to HOList.
 
 ### Starting the HOList docker container.
@@ -123,15 +124,15 @@ that instead of using a docker network, we just expose port 2000.  This means we
 
 Later, when you want to stop the server, just run
 ```bash
-docker stop holist && docker rm holist
+$ docker stop holist && docker rm holist
 ```
 
 ### Running the client
 
-Clone this repository.  Follow [these very simple instructions](https://grpc.io/docs/tutorials/basic/python/) to get the grpcio and 
-grpcio_tools dependencies (and to learn a bit more about gRPC). (Note, this repository includes the automatically created files 
+Clone this repository.  Follow [these very simple instructions](https://grpc.io/docs/tutorials/basic/python/) to get the `grpcio` and 
+`grpcio_tools` dependencies (and to learn a bit more about gRPC). (Note, this repository includes the automatically created files 
 `proof_assistant_pb2.py` and `proof_assistant_pb2_grpc.py`
-so you don't have to build those.)  **(TODO: Improve thes setup instructions.)**
+so you don't have to build those.)  **(TODO: Improve these setup instructions.)**
 
 After that is all setup, you can run the client via:
 ```bash
@@ -153,4 +154,4 @@ Response:
  goals {
 }
 ```
-Showing both the request sent (to apply the `SIMP_TAC` to the goal "for all x, x = x"), and the response (no more goals, i.e. it is solved).
+This is showing both the request sent (to apply the `SIMP_TAC` to the goal "for all x, x = x"), and the response (no more goals, i.e. it is solved).
