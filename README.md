@@ -5,7 +5,13 @@ prover.  It turns HOL Light into a machine learning gym environment.  HOList,
 when wrapped in a Docker container, acts as a server which can be interacted 
 with via the gRPC standard.  One problem is that those who are familiar with machine
 learning may not be familiar with interactive theorem proving and vice versa.  Here,
-I will show how to interact with the HOList server, and describe the interface.
+I will show how to interact with the HOList server, and describe the interface. (I
+am not directly connected with Google Research or the HOList project, but thought
+this would be of interest to others.)
+
+## A walkthrough
+
+See [this notebook](walkthrough_of_holist_api.ipynb) for an interactive walkthrough of the HOList API.
 
 ## The HOList system (a disambiguation)
 
@@ -128,6 +134,8 @@ $ docker stop holist && docker rm holist
 ```
 
 ### Running the client
+
+(Update: See [this notebook](walkthrough_of_holist_api.ipynb) for an interactive notebook.)
 
 Clone this repository.  Follow [these very simple instructions](https://grpc.io/docs/tutorials/basic/python/) to get the `grpcio` and 
 `grpcio_tools` dependencies (and to learn a bit more about gRPC). (Note, this repository includes the automatically created files 
